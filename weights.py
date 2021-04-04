@@ -1,9 +1,10 @@
 """ Perform computation on weights """
 import json
+import secrets
 import discord
 
 client = discord.Client()
-TOKEN = "ODI4Mzg4MzE2MjQ0MDgyNzA5.YGo2vQ.vTc02rJhe2QZksdSPlzfTyxrgkI"
+TOKEN = secrets.TOKEN
 
 with open('weight_store.json', 'r') as f:
     weight_store = json.load(f)

@@ -4,7 +4,6 @@ import secrets
 import discord
 
 client = discord.Client()
-TOKEN = secrets.TOKEN
 
 with open('weight_store.json', 'r') as f:
     weight_store = json.load(f)
@@ -117,7 +116,7 @@ async def on_message(message):
 
 def main():
     """ Entry point of program """
-    client.run(TOKEN)
+    client.run(secrets.TOKEN)
 
 
 if __name__ == '__main__':

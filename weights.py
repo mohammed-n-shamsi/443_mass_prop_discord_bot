@@ -108,7 +108,7 @@ async def on_message(message):
     if message.content.startswith('$Change weight:'):
         args = (message.content).split()
         if valid_component(args[2]):
-            change_weight(args[2], int(args[3]))
+            change_weight(args[2], float(args[3]))
             msg = comp_weight_str(args[2])
         else:
             msg = "Invalid Component"

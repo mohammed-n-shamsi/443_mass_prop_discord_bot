@@ -2,7 +2,7 @@
     {
         "component": "fuselage",
         "group": "empty_weight",
-        "weight": 0,
+        "weight": 2000,
         "x_cg": 0,
         "y_cg": 0,
         "z_cg": 0
@@ -10,7 +10,7 @@
     {
         "component": "wing",
         "group": "empty_weight",
-        "weight": 0,
+        "weight": 1750,
         "x_cg": 0,
         "y_cg": 0,
         "z_cg": 0
@@ -18,7 +18,7 @@
     {
         "component": "empennage",
         "group": "empty_weight",
-        "weight": 0,
+        "weight": 110,
         "x_cg": 0,
         "y_cg": 0,
         "z_cg": 0
@@ -90,7 +90,7 @@
     {
         "component": "crew",
         "group": "operating_empty_weight",
-        "weight": 0,
+        "weight": 500,
         "x_cg": 0,
         "y_cg": 0,
         "z_cg": 0
@@ -98,7 +98,7 @@
     {
         "component": "fuel",
         "group": "max_weight",
-        "weight": 0,
+        "weight": 1600,
         "x_cg": 0,
         "y_cg": 0,
         "z_cg": 0

@@ -56,8 +56,7 @@ def group_cg(group, cg):
     for comp in weight_store:
         if determine_group(group, comp['group']):
             cg_sum = cg_sum + (comp[cg] * comp['weight'])
-        cg_sum = cg_sum / group_weight(group)
-    return cg_sum
+    return cg_sum / group_weight(group)
 
 
 def determine_group(requested_group, item_group):

@@ -100,8 +100,8 @@ def build_cgs(group):
         if determine_group(group, comp['group']):
             cg_str = cg_str + comp['component']
             cg_str = cg_str + ' '
-            cg_str = cg_str + str(comp['x_cg'])
-            cg_str = cg_str + str(comp['y_cg'])
+            cg_str = cg_str + str(comp['x_cg']) + ' '
+            cg_str = cg_str + str(comp['y_cg']) + ' '
             cg_str = cg_str + str(comp['z_cg'])
             cg_str = cg_str + '\n'
     cg_str = cg_str + "---------- \n"

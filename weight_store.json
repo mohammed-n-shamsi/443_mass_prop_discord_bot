@@ -18,7 +18,7 @@
     {
         "component": "empennage",
         "group": "empty_weight",
-        "weight": 110,
+        "weight": 173.1,
         "x_cg": 0,
         "y_cg": 0,
         "z_cg": 0
@@ -26,7 +26,7 @@
     {
         "component": "installed_engine",
         "group": "empty_weight",
-        "weight": 0,
+        "weight": 812.5,
         "x_cg": 0,
         "y_cg": 0,
         "z_cg": 0
@@ -58,7 +58,7 @@
     {
         "component": "integrated_gun",
         "group": "empty_weight",
-        "weight": 0,
+        "weight": 800.0,
         "x_cg": 0,
         "y_cg": 0,
         "z_cg": 0
@@ -66,7 +66,7 @@
     {
         "component": "ejection_seat",
         "group": "empty_weight",
-        "weight": 0,
+        "weight": 300.0,
         "x_cg": 0,
         "y_cg": 0,
         "z_cg": 0
@@ -82,7 +82,7 @@
     {
         "component": "trapped_fuel",
         "group": "operating_empty_weight",
-        "weight": 0,
+        "weight": 100.0,
         "x_cg": 0,
         "y_cg": 0,
         "z_cg": 0
@@ -90,7 +90,7 @@
     {
         "component": "crew",
         "group": "operating_empty_weight",
-        "weight": 500,
+        "weight": 400.0,
         "x_cg": 0,
         "y_cg": 0,
         "z_cg": 0

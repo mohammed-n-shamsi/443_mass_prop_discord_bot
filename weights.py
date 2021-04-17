@@ -25,6 +25,12 @@ def change_weight(component, weight):
         if comp['component'] == component:
             change_element(comp, 'weight', weight)
 
+def change_cg(component, x, y, z):
+    for comp in weight_store:
+        if comp['component'] == component:
+            change_element(comp, 'x_cg', x)
+            change_element(comp, 'y_cg', y)
+            change_element(comp, 'z_cg', z)
 
 def total_weight():
     """ Returns the weight from each component """
@@ -86,13 +92,15 @@ def comp_weight_str(component):
 
 def help_string():
     """ Builds help string """
-    msg = "Commands: |$List <group>| \n "
+    msg = "Commands:\n |$List <group>| \n "
     msg = msg + "|$Change weight: component weight| \n"
+    msg = msg + "------------ \n"
     msg = msg + "Components are: \n"
     for comp in weight_store:
         if comp['group'] != 'invalid':
             msg = msg + comp['component']
             msg = msg + '\n'
+    msg = msg + "------------ \n"
     msg = msg + "Groups are: \n"
     msg = msg + "empty_weight \n"
     msg = msg + "operating_empty_weight \n"
@@ -120,9 +128,19 @@ async def on_message(message):
     if message.content.startswith('$help'):
         msg = help_string()
         await message.channel.send(msg)
+    if message.content.startswith('$List cg'):
+        await message.channel.send("hi")
     if message.content.startswith('$List'):
         args = (message.content).split()
         msg = build_weights(args[1])
+        await message.channel.send(msg)
+    if message.content.startswith('$Change cg:'):
+        args = (message.content).split()
+        if valid_component(args[2]):
+            change_cg(args[2], float(args[3]), \
+                    float(args[4]), float(args[5]))
+        else:
+            msg = "Invalid Component"
         await message.channel.send(msg)
     if message.content.startswith('$Change weight:'):
         args = (message.content).split()

@@ -39,23 +39,38 @@ def group_weight(group):
     """ Returns the weight for each component in a group """
     weight_sum = 0
     for comp in weight_store:
-        if group == comp['group']:
+        if determine_group(group, comp['group']):
             weight_sum = weight_sum + comp['weight']
     return weight_sum
 
+def determine_group(requested_group, item_group):
+    """ Determines if item group should be in requested group """
+    if requested_group == "invalid":
+        return False
+    if item_group == requested_group:
+        return True
+    if requested_group == "max_weight":
+        return True
+    if requested_group == "operating_empty_weight" and \
+            item_group != "max_weight":
+        return True
+    return False
 
-def build_all_weights():
+
+def build_weights(group):
     """ Builds weight string to send to discord """
-    weight_str = "Weight of all components \n"
+    weight_str = "Weight of "
+    weight_str = weight_str + group + '\n'
     weight_str = weight_str + "----------- \n"
     for comp in weight_store:
-        if comp['group'] != 'invalid':
+        if determine_group(group, comp['group']):
             weight_str = weight_str + comp['component']
             weight_str = weight_str + ' '
             weight_str = weight_str + str(comp['weight'])
             weight_str = weight_str + '\n'
     weight_str = weight_str + "---------- \n"
-    weight_str = weight_str + "MTOW - " + str(total_weight())
+    weight_str = weight_str + group
+    weight_str = weight_str + " - " + str(group_weight(group))
     return weight_str
 
 
@@ -71,13 +86,17 @@ def comp_weight_str(component):
 
 def help_string():
     """ Builds help string """
-    msg = "Commands: |$List all weights| & "
+    msg = "Commands: |$List <group>| \n "
     msg = msg + "|$Change weight: component weight| \n"
     msg = msg + "Components are: \n"
     for comp in weight_store:
         if comp['group'] != 'invalid':
             msg = msg + comp['component']
             msg = msg + '\n'
+    msg = msg + "Groups are: \n"
+    msg = msg + "empty_weight \n"
+    msg = msg + "operating_empty_weight \n"
+    msg = msg + "max_weight \n"
     return msg
 
 
@@ -101,8 +120,9 @@ async def on_message(message):
     if message.content.startswith('$help'):
         msg = help_string()
         await message.channel.send(msg)
-    if message.content.startswith('$List all weights'):
-        msg = build_all_weights()
+    if message.content.startswith('$List'):
+        args = (message.content).split()
+        msg = build_weights(args[2])
         await message.channel.send(msg)
     if message.content.startswith('$Change weight:'):
         args = (message.content).split()

@@ -106,8 +106,8 @@ def build_cgs(group):
             cg_str = cg_str + '\n'
     cg_str = cg_str + "---------- \n"
     cg_str = cg_str + group
-    cg_str = cg_str + " - " + str(group_cg(group, 'x_cg'))
-    cg_str = cg_str + str(group_cg(group, 'y_cg'))
+    cg_str = cg_str + " - " + str(group_cg(group, 'x_cg')) + " "
+    cg_str = cg_str + str(group_cg(group, 'y_cg')) + " "
     cg_str = cg_str + str(group_cg(group, 'z_cg'))
     return cg_str
 

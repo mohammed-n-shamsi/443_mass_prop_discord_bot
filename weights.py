@@ -122,7 +122,7 @@ async def on_message(message):
         await message.channel.send(msg)
     if message.content.startswith('$List'):
         args = (message.content).split()
-        msg = build_weights(args[2])
+        msg = build_weights(args[1])
         await message.channel.send(msg)
     if message.content.startswith('$Change weight:'):
         args = (message.content).split()

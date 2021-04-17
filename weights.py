@@ -49,6 +49,17 @@ def group_weight(group):
             weight_sum = weight_sum + comp['weight']
     return weight_sum
 
+
+def group_cg(group, cg):
+    """ Returns the cg for each component in a group """
+    cg_sum = 0
+    for comp in cg_store:
+        if determine_group(group, comp['group']):
+            cg_sum = cg_sum + (comp[cg] * comp['weight'])
+        cg_sum = cg_sum / group_weight(group)
+    return cg_sum
+
+
 def determine_group(requested_group, item_group):
     """ Determines if item group should be in requested group """
     if item_group == "invalid":
@@ -80,6 +91,27 @@ def build_weights(group):
     return weight_str
 
 
+def build_cgs(group):
+    """ Builds cg string to send to discord """
+    cg_str = "cg of "
+    cg_str = cg_str + group + '\n'
+    cg_str = cg_str + "----------- \n"
+    for comp in weight_store:
+        if determine_group(group, comp['group']):
+            cg_str = cg_str + comp['component']
+            cg_str = cg_str + ' '
+            cg_str = cg_str + str(comp['x_cg'])
+            cg_str = cg_str + str(comp['y_cg'])
+            cg_str = cg_str + str(comp['z_cg'])
+            cg_str = cg_str + '\n'
+    cg_str = cg_str + "---------- \n"
+    cg_str = cg_str + group
+    cg_str = cg_str + " - " + str(group_cg(group, 'x_cg'))
+    cg_str = cg_str + str(group_cg(group, 'y_cg'))
+    cg_str = cg_str + str(group_cg(group, 'z_cg'))
+    return cg_str
+
+
 def comp_weight_str(component):
     """ returns weight of a component """
     for comp in weight_store:
@@ -92,8 +124,11 @@ def comp_weight_str(component):
 
 def help_string():
     """ Builds help string """
-    msg = "Commands:\n |$List <group>| \n "
-    msg = msg + "|$Change weight: component weight| \n"
+    msg = "Commands:\n" 
+    msg = msg + "|$List weight <group>| \n "
+    msg = msg + "|$List cg <group>| \n"
+    msg = msg + "|$Change cg: <component> <x> <y> <z>| \n"
+    msg = msg + "|$Change weight: <component> <weight>| \n"
     msg = msg + "------------ \n"
     msg = msg + "Components are: \n"
     for comp in weight_store:
@@ -129,10 +164,12 @@ async def on_message(message):
         msg = help_string()
         await message.channel.send(msg)
     if message.content.startswith('$List cg'):
-        await message.channel.send("hi")
-    if message.content.startswith('$List'):
         args = (message.content).split()
-        msg = build_weights(args[1])
+        msg = build_cgs(args[2])
+        await message.channel.send(msg)
+    if message.content.startswith('$List weight'):
+        args = (message.content).split()
+        msg = build_weights(args[2])
         await message.channel.send(msg)
     if message.content.startswith('$Change cg:'):
         args = (message.content).split()

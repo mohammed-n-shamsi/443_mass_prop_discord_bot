@@ -45,7 +45,7 @@ def group_weight(group):
 
 def determine_group(requested_group, item_group):
     """ Determines if item group should be in requested group """
-    if requested_group == "invalid":
+    if item_group == "invalid":
         return False
     if item_group == requested_group:
         return True

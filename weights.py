@@ -122,6 +122,18 @@ def comp_weight_str(component):
     return "Component not found"
 
 
+def comp_cg_str(component):
+    """ returns cg of a component """
+    for comp in weight_store:
+        if comp['component'] == component:
+            msg = "cg - "
+            msg = msg + component + ' ' + str(comp['x_cg']) + ' '
+            msg = msg + str(comp['y_cg']) + ' '
+            msg = msg + str(comp['z_cg'])
+            return msg
+    return "Component not found"
+
+
 def help_string():
     """ Builds help string """
     msg = "Commands:\n" 
@@ -176,6 +188,7 @@ async def on_message(message):
         if valid_component(args[2]):
             change_cg(args[2], float(args[3]), \
                     float(args[4]), float(args[5]))
+            msg = comp_cg_str(args[2])
         else:
             msg = "Invalid Component"
         await message.channel.send(msg)

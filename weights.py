@@ -53,7 +53,7 @@ def group_weight(group):
 def group_cg(group, cg):
     """ Returns the cg for each component in a group """
     cg_sum = 0
-    for comp in cg_store:
+    for comp in weight_store:
         if determine_group(group, comp['group']):
             cg_sum = cg_sum + (comp[cg] * comp['weight'])
         cg_sum = cg_sum / group_weight(group)

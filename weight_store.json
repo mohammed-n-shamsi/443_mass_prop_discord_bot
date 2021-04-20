@@ -3,113 +3,113 @@
         "component": "fuselage",
         "group": "empty_weight",
         "weight": 2000,
-        "x_cg": 0,
-        "y_cg": 0,
-        "z_cg": 0
+        "x_cg": 152.05,
+        "y_cg": 4.0,
+        "z_cg": 0.0
     },
     {
         "component": "wing",
         "group": "empty_weight",
         "weight": 1750,
-        "x_cg": 0,
-        "y_cg": 0,
-        "z_cg": 0
+        "x_cg": 180.628,
+        "y_cg": 13.23,
+        "z_cg": 0.0
     },
     {
         "component": "empennage",
         "group": "empty_weight",
         "weight": 173.1,
-        "x_cg": 0,
-        "y_cg": 0,
-        "z_cg": 0
+        "x_cg": 391.0,
+        "y_cg": -36.36,
+        "z_cg": 0.0
     },
     {
         "component": "installed_engine",
         "group": "empty_weight",
         "weight": 812.5,
-        "x_cg": 0,
-        "y_cg": 0,
-        "z_cg": 0
+        "x_cg": 29.95,
+        "y_cg": 0.0,
+        "z_cg": 0.0
     },
     {
         "component": "landing_gear",
         "group": "empty_weight",
-        "weight": 0,
-        "x_cg": 0,
-        "y_cg": 0,
-        "z_cg": 0
+        "weight": 320.0,
+        "x_cg": 135.95,
+        "y_cg": 49.73,
+        "z_cg": 0.0
     },
     {
         "component": "avionics",
         "group": "empty_weight",
-        "weight": 0,
-        "x_cg": 0,
-        "y_cg": 0,
-        "z_cg": 0
+        "weight": 215.6,
+        "x_cg": 107.95,
+        "y_cg": 3.73,
+        "z_cg": 0.0
     },
     {
         "component": "electrical",
         "group": "empty_weight",
-        "weight": 0,
-        "x_cg": 0,
-        "y_cg": 0,
-        "z_cg": 0
+        "weight": 194.79,
+        "x_cg": 98.2,
+        "y_cg": 17.23,
+        "z_cg": 0.0
     },
     {
         "component": "integrated_gun",
         "group": "empty_weight",
-        "weight": 800.0,
-        "x_cg": 0,
-        "y_cg": 0,
-        "z_cg": 0
+        "weight": 830.0,
+        "x_cg": 166.0,
+        "y_cg": 15.0,
+        "z_cg": 0.0
     },
     {
         "component": "ejection_seat",
         "group": "empty_weight",
         "weight": 300.0,
-        "x_cg": 0,
-        "y_cg": 0,
-        "z_cg": 0
+        "x_cg": 163.95,
+        "y_cg": 7.73,
+        "z_cg": 0.0
     },
     {
         "component": "dummy_fixed_equipment",
         "group": "empty_weight",
-        "weight": 0,
-        "x_cg": 0,
-        "y_cg": 0,
-        "z_cg": 0
+        "weight": 674.0,
+        "x_cg": 237.76,
+        "y_cg": 2.33,
+        "z_cg": 0.0
     },
     {
         "component": "trapped_fuel",
         "group": "operating_empty_weight",
         "weight": 100.0,
-        "x_cg": 0,
-        "y_cg": 0,
-        "z_cg": 0
+        "x_cg": 177.95,
+        "y_cg": 17.5,
+        "z_cg": 0.0
     },
     {
         "component": "crew",
         "group": "operating_empty_weight",
         "weight": 400.0,
-        "x_cg": 0,
-        "y_cg": 0,
-        "z_cg": 0
+        "x_cg": 163.95,
+        "y_cg": 7.73,
+        "z_cg": 0.0
     },
     {
         "component": "fuel",
         "group": "max_weight",
-        "weight": 1600,
-        "x_cg": 0,
-        "y_cg": 0,
-        "z_cg": 0
+        "weight": 1610.0,
+        "x_cg": 177.95,
+        "y_cg": 15.4,
+        "z_cg": 0.0
     },
     {
         "component": "payload",
         "group": "max_weight",
         "weight": 3000,
-        "x_cg": 0,
-        "y_cg": 0,
-        "z_cg": 0
+        "x_cg": 185.8,
+        "y_cg": 40.73,
+        "z_cg": 0.0
     },
     {
         "component": "invalid",

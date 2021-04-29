@@ -43,16 +43,16 @@
         "component": "avionics",
         "group": "empty_weight",
         "weight": 215.6,
-        "x_cg": 107.95,
-        "y_cg": 3.73,
+        "x_cg": 202.1,
+        "y_cg": 108.0,
         "z_cg": 0.0
     },
     {
         "component": "electrical",
         "group": "empty_weight",
         "weight": 194.79,
-        "x_cg": 98.2,
-        "y_cg": 17.23,
+        "x_cg": 147.135,
+        "y_cg": 115.33,
         "z_cg": 0.0
     },
     {
@@ -98,7 +98,7 @@
     {
         "component": "fuel",
         "group": "max_weight",
-        "weight": 1610.0,
+        "weight": 1601.0,
         "x_cg": 177.95,
         "y_cg": 15.4,
         "z_cg": 0.0
@@ -106,7 +106,7 @@
     {
         "component": "payload",
         "group": "max_weight",
-        "weight": 3000,
+        "weight": 3000.0,
         "x_cg": 185.8,
         "y_cg": 40.73,
         "z_cg": 0.0

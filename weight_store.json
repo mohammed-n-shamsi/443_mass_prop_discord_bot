@@ -83,7 +83,7 @@
         "component": "trapped_fuel",
         "group": "operating_empty_weight",
         "weight": 100.0,
-        "x_cg": 177.95,
+        "x_cg": 177.76,
         "y_cg": 17.5,
         "z_cg": 0.0
     },
@@ -98,8 +98,8 @@
     {
         "component": "fuel",
         "group": "max_weight",
-        "weight": 1601.0,
-        "x_cg": 177.95,
+        "weight": 1610.0,
+        "x_cg": 177.76,
         "y_cg": 15.4,
         "z_cg": 0.0
     },
